@@ -1,12 +1,23 @@
-import { action } from "@storybook/addon-actions";
-import { storiesOf } from "@storybook/angular";
+import type { Meta, StoryObj } from "@storybook/angular";
 
 import { ButtonComponent } from "./button.component";
 
-storiesOf("my-lib", module).add("button", () => ({
+const meta: Meta<ButtonComponent> = {
+  title: "Atom/My-Button",
   component: ButtonComponent,
-  props: {
-    text: "Hello",
-    click: action("You clicked me..."),
+  tags: ["autodocs"],
+  render: (args: ButtonComponent) => ({
+    props: {
+      ...args,
+    },
+  }),
+};
+
+export default meta;
+type Story = StoryObj<ButtonComponent>;
+
+export const Primary: Story = {
+  args: {
+    text: "Primário",
   },
-}));
+};
