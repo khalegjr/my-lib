@@ -1,27 +1,82 @@
 # MyLib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+Este é um projeto teste de construção de uma biblioteca de componentes angular, baseados no Angular Material .
 
-## Development server
+## Como gerar um componente na biblioteca
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Estando na raiz do projeto
 
-## Code scaffolding
+```bash
+ng g c nome-componente --project=my-lib
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configurações para utilizar os estilos do Angular Material
 
-## Build
+### Componentes do Angular Materaial
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para o Storybook reconhecer os componentes do Angular Material, precisamos adicionar o componente do Angular material na sessão `decorators` do arquivo **_.stories_** do nosso componente.
 
-## Running unit tests
+```typescript
+// exemplo de um componente com vários componentes do material e do angular
+const meta: Meta<FormFielComponent> = {
+  title: "components/Form field",
+  component: FormFielComponent,
+  tags: ["autodocs"],
+  render: (args: FormFielComponent) => ({
+    props: {
+      ...args,
+    },
+  }),
+  decorators: [
+    moduleMetadata({
+      imports: [
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatIconModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        FormsModule,
+      ],
+    }),
+  ],
+  parameters: {
+    controls: {
+      expanded: true,
+    },
+  },
+  argTypes: formFieldArgtypes, // Os tipos de arumentos foram declarados em um arquivo separado.
+};
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Estilos do Angular Material
 
-## Running end-to-end tests
+Para o Storybook reconhecer os estilos do Angular Material, precisamos adicionar o caminho para o arquivo styles.scss, ou ao arquivo de tema do próprio Angular Material, à sessão de build do Storybook no arquivo angular.json.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```json
+// adiciona a chave "styles" com o caminho do arquivo de estilo
+"storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/my-lib/.storybook",
+            "browserTarget": "my-lib:build",
+            "compodoc": false,
+            "styles": ["projects/my-lib/src/lib/styles.scss"],
+            "port": 6006
+          }
+        },
 
-## Further help
+// adiciona a chave "styles" com o caminho do tema do Angular Material
+"storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/my-lib/.storybook",
+            "browserTarget": "my-lib:build",
+            "compodoc": false,
+            "styles": ["node_modules/@angular/material/prebuilt-themes/indigo-pink.css"],
+            "port": 6006
+          }
+        },
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```

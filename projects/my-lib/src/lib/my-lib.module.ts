@@ -1,18 +1,14 @@
-import { NgModule } from '@angular/core';
-import { MyLibComponent } from './my-lib.component';
-import { ButtonComponent } from './button/button.component';
+import { NgModule } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
-
+import { ButtonComponent } from "./button/button.component";
+import { MyLibComponent } from "./my-lib.component";
+import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 
 @NgModule({
-  declarations: [
-    MyLibComponent,
-    ButtonComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    MyLibComponent
-  ]
+  declarations: [MyLibComponent, ButtonComponent, ProgressBarComponent],
+  imports: [MatButtonModule, MatProgressBarModule],
+  exports: [MyLibComponent],
 })
-export class MyLibModule { }
+export class MyLibModule {}
