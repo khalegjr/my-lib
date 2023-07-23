@@ -52,7 +52,7 @@ const meta: Meta<FormFielComponent> = {
 
 ### Estilos do Angular Material
 
-Para o Storybook reconhecer os estilos do Angular Material, precisamos adicionar o caminho para o arquivo styles.scss, ou ao arquivo de tema do próprio Angular Material, à sessão de build do Storybook no arquivo angular.json.
+Para o Storybook reconhecer os estilos do Angular Material, precisamos adicionar o caminho para o arquivo _**styles.scss**_, ou ao arquivo de tema do próprio Angular Material, à sessão de **build** do Storybook no arquivo _**angular.json**_.
 
 ```json
 // adiciona a chave "styles" com o caminho do arquivo de estilo
