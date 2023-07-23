@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/angular";
+import { MatButtonModule } from "@angular/material/button";
+import { moduleMetadata, type Meta, type StoryObj } from "@storybook/angular";
 
 import { ButtonComponent } from "./button.component";
 
@@ -11,6 +12,11 @@ const meta: Meta<ButtonComponent> = {
       ...args,
     },
   }),
+  decorators: [
+    moduleMetadata({
+      imports: [MatButtonModule],
+    }),
+  ],
 };
 
 export default meta;
