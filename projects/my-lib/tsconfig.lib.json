@@ -9,6 +9,10 @@
     "types": []
   },
   "exclude": [
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "src/test.ts",
+    "src/**/*.spec.ts",
+    "**/*.stories.ts",
+    "src/jest-config"
   ]
 }
