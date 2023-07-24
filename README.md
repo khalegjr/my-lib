@@ -80,3 +80,10 @@ Para o Storybook reconhecer os estilos do Angular Material, precisamos adicionar
         },
 
 ```
+
+## Instalação de ambiente de teste
+
+Segui o tutorial
+<https://storybook.js.org/tutorials/intro-to-storybook/angular/pt/get-started/>
+
+> <https://github.com/geromegrignon/angular-material-storybook/blob/main/projects/showcase/src/main.ts>
