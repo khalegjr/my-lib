@@ -3,20 +3,20 @@ import {
   FormsModule,
   ReactiveFormsModule,
   Validators,
-} from "@angular/forms";
-import { MatButtonModule } from "@angular/material/button";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatIconModule } from "@angular/material/icon";
-import { MatInputModule } from "@angular/material/input";
-import { MatSelectModule } from "@angular/material/select";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { formFieldArgtypes } from "./form-field.argtype";
+} from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { formFieldArgtypes } from './form-field.argtype';
 // import { expect } from "@storybook/jest";
 
 export default {
-  title: "components/Form field",
-  tags: ["docsPage"],
+  title: 'components/Form field',
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [
@@ -79,10 +79,10 @@ export const WithStateFilled: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with state (filled)",
+  name: 'with state (filled)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -97,10 +97,10 @@ export const WithStateDisabled: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with state (disabled)",
+  name: 'with state (disabled)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -115,10 +115,10 @@ export const WithStateFocused: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with state (focused)",
+  name: 'with state (focused)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -133,10 +133,10 @@ export const WithStateHover: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with state (hover)",
+  name: 'with state (hover)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
     pseudo: {
       hover: true,
@@ -148,7 +148,7 @@ export const WithAppearanceLegacy: StoryObj = {
   render: (args) => ({
     props: {
       ...args,
-      appearance: "legacy",
+      appearance: 'legacy',
     },
     template: `
       <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -157,10 +157,10 @@ export const WithAppearanceLegacy: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with appearance (legacy)",
+  name: 'with appearance (legacy)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -169,7 +169,7 @@ export const WithAppearanceStandard: StoryObj = {
   render: (args) => ({
     props: {
       ...args,
-      appearance: "standard",
+      appearance: 'standard',
     },
     template: `
       <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -178,10 +178,10 @@ export const WithAppearanceStandard: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with appearance (standard)",
+  name: 'with appearance (standard)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -190,7 +190,7 @@ export const WithAppearanceFill: StoryObj = {
   render: (args) => ({
     props: {
       ...args,
-      appearance: "fill",
+      appearance: 'fill',
     },
     template: `
       <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -199,10 +199,10 @@ export const WithAppearanceFill: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with appearance (fill)",
+  name: 'with appearance (fill)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -211,7 +211,7 @@ export const WithAppearanceOutline: StoryObj = {
   render: (args) => ({
     props: {
       ...args,
-      appearance: "outline",
+      appearance: 'outline',
     },
     template: `
       <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -220,10 +220,10 @@ export const WithAppearanceOutline: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with appearance (outline)",
+  name: 'with appearance (outline)',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -239,7 +239,7 @@ export const WithStartHint: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with hint (start)",
+  name: 'with hint (start)',
 };
 
 export const WithEndHint: StoryObj = {
@@ -256,7 +256,7 @@ export const WithEndHint: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with hint (end)",
+  name: 'with hint (end)',
 };
 
 export const WithDoubleHints: StoryObj = {
@@ -271,7 +271,7 @@ export const WithDoubleHints: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with hint (double)",
+  name: 'with hint (double)',
 };
 
 export const WithPrefix: StoryObj = {
@@ -288,10 +288,10 @@ export const WithPrefix: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with prefix",
+  name: 'with prefix',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -312,10 +312,10 @@ export const WithSuffix: StoryObj = {
       </mat-form-field>
     `,
   }),
-  name: "with suffix",
+  name: 'with suffix',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
@@ -349,15 +349,15 @@ export const WithPrefixAndSuffix: StoryObj = {
     </mat-form-field>
     `,
   }),
-  name: "with prefix and suffix",
+  name: 'with prefix and suffix',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
 
-const control = new FormControl("", Validators.required);
+const control = new FormControl('', Validators.required);
 control.markAsTouched();
 
 export const WithErrorMessage: StoryObj = {
@@ -374,10 +374,10 @@ export const WithErrorMessage: StoryObj = {
       </mat-form-field>
       `,
   }),
-  name: "with error message",
+  name: 'with error message',
   parameters: {
     controls: {
-      exclude: ["alignHint"],
+      exclude: ['alignHint'],
     },
   },
 };
