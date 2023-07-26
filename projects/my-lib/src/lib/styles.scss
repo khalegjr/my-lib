@@ -7,8 +7,8 @@
 @include mat.all-component-typographies();
 @include mat.core();
 
-$light-primary: mat.define-palette($light-theme-primary);
-$light-accent: mat.define-palette($light-theme-accent);
+$light-primary: mat.define-palette($light-theme-primary, 500);
+$light-accent: mat.define-palette($light-theme-accent, 400, 200, 700);
 $light-warn: mat.define-palette($light-theme-warn);
 
 $light-theme: mat.define-light-theme(
